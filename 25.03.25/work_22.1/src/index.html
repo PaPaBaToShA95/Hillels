@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список фільмів з сюрпризом</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="main">
+        <div class="title">Додати фільм</div>
+        <div class="inputBlock">
+            <input type="text" class="input" placeholder="Введіть назву вільму" id="nameFilm">
+            <input type="text" class="input" placeholder="Введіть рік випуску" id="yearFilm">
+            <input type="text" class="input" placeholder="Введіть жанр" id="genreFilm">
+            <input type="number" class="input" placeholder="Введіть рейтинг" id="ratingFilm" aria-valuemin="0"
+                aria-valuemax="10" min="0" max="10">
+            <input type="link" class="input" placeholder="Введіть посилання на постер" id="posterFilm">
+            <input type="link" class="input" placeholder="Посилання на трейлер" id="trailerFilm">
+            <input type="link" class="input" placeholder="Посилання на фільм" id="linkFilm">
+            <input type="text" class="input" placeholder="Введіть опис фільму" id="descriptionFilm">
+        </div>
+        <button class="btn" id="addFilm">Додати фільм</button>
+
+        <div class="list" id="list">
+            <div class="item">
+                <div class="poster">
+                    <img class="poster"
+                        src="assets/HP1.jpg"
+                        alt="Harry Potter and the Sorcerer's Stone">
+                </div>
+                <div class="info">
+                    <div class="name">Гаррі Поттер і Камінь у Нирках</div>
+                    <div class="year">2024 рік</div>
+                    <div class="genre">Жанр:Комедія</div>
+                    <div class="rating">Рейтинг:<div class="star">⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐</div>
+                    </div>
+                    <div class="description">
+                        <p class="descriptionTitle">Опис:</p>Серія переозвучок по всесвіту Гаррі Поттера які створюють іншу реальність з купою жартів, мемів, лайки, каламбурів і
+                        відсилок на українську культуру. Історія про ПереГаррі і його чарівний шлях в світі корупції, брехні і головного злодія
+                        Ботексоморта.
+                        Для цінувачів тонкої і простої адаптації та людей які хочуть подивитися старий та всім відомий фільм під новим кутом і з
+                        новими враженнями.
+                        Переклад ском представляє фільми: Гаррі Поттер і камінь в нирках (хронометраж 107хв), Гаррі Поттер і дитяча кімната
+                        міліції (хронометраж 111хв), Гаррі Поттер і в’язень Азербайджану (хронометраж 126хв).
+                        Преозвучка несе в собі гумор 18+ та ще й на любителя. Всі збіги з реальним життям випадкові, приємного перегляду:).
+                    </div>
+                    <div class="btns">
+                        <a onclick="openVideoPlayer('assets/HP1.mp4')"
+                            class="btn">Дивитись фільм</a>
+                        <a onclick="openVideoPlayer('assets/trailer.mp4')"
+                            class="btn">Дивитись трейлер</a>
+                        <button class="btn" onclick="deleteFilm(0)">Видалити</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
