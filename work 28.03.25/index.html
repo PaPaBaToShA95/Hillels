@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="UK">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List з використанням API</title>
+    <link rel="stylesheet" href="./dist/style/home.css">
+
+</head>
+
+<body>
+    <div id="todo-app">
+        <h1>Todo List</h1>
+        <input type="text" id="todo-input" placeholder="Add a new task">
+        <button id="add-todo">Додати задачу</button>
+
+        <div id="filters">
+            <button data-filter="all">Всі задачі</button>
+            <button data-filter="completed">Виконані</button>
+            <button data-filter="deleted">Видалені</button>
+        </div>
+
+        <ul id="todo-list"></ul>
+    </div>
+    <script src="./src/js/index.js"></script>
+</body>
+
+</html>
