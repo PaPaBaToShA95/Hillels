@@ -1,0 +1,31 @@
+Body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.smile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap:50px
+}
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap:50px;
+    margin-top: 50px
+}
+.btnClick{
+    border-radius: 15px;
+  border: none;
+  background-color: aqua;
+  padding: 10px;
+  cursor: pointer;
+}
+span{
+    cursor: pointer;
+}
