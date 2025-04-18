@@ -14,6 +14,7 @@ function App() {
     setInput("");
   };
 
+  
   return (
     <div className="min-h-screen flex flex-col items-center justify-start p-4 text-blue-600">
       <h1 className="text-3xl font-bold mb-6">TODO List</h1>
