@@ -1,5 +1,4 @@
 import { configureStore } from '@reduxjs/toolkit';
-import peopleReducer from '../features/people/peopleSlice';
 import {
     persistStore,
     persistReducer,
@@ -11,19 +10,14 @@ import {
     REGISTER,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import { combineReducers } from 'redux';
 
-
+import rootReducer from './rootReducer';
 
 const persistConfig = {
     key: 'root',
     storage,
     whitelist: ['people'],
 };
-
-const rootReducer = combineReducers({
-    people: peopleReducer,
-});
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
@@ -35,7 +29,6 @@ export const store = configureStore({
                 ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
             },
         }),
-
 });
 
 export const persistor = persistStore(store);

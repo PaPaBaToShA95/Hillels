@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { clearPersonData } from "../features/people/peopleSlice";
-import { persistor } from "../redux/store";
+import { persistor } from "../store/store";
 
 const Footer = () => {
   const dispatch = useDispatch();
