@@ -1,48 +1,84 @@
 const delay = (ms) => new Promise(res => setTimeout(res, ms));
 
-const STORAGE_KEY = 'sagaTodos';
-
-const getTodosFromStorage = () => {
-    const storedTodos = localStorage.getItem(STORAGE_KEY);
-    return storedTodos ? JSON.parse(storedTodos) : [];
-};
-
-const saveTodosToStorage = (todosArray) => {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(todosArray));
-};
-
-let todos = getTodosFromStorage();
-
 export const fetchTodos = async () => {
-    await delay(1500);
-    return todos;
+    await delay(500);
+    const response = await fetch('https://dummyjson.com/todos');
+    if (!response.ok) {
+        const errorText = await response.text();
+        throw new Error(`Не вдалося завантажити завдання: ${response.status} ${response.statusText} - ${errorText}`);
+    }
+    const data = await response.json();
+    return data.todos;
 };
 
-export const addTodoApi = async (todo) => {
+
+export const addTodoApi = async (todoObjectFromSaga) => {
     await delay(300);
-    todos.push(todo);
-    saveTodosToStorage(todos);
-    return todo;
+    const response = await fetch('https://dummyjson.com/todos/add', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            todo: todoObjectFromSaga.text,
+            completed: todoObjectFromSaga.completed,
+            userId: 1,
+        }),
+    });
+    if (!response.ok) {
+        const errorText = await response.text();
+        throw new Error(`Не вдалося додати завдання: ${response.status} ${response.statusText} - ${errorText}`);
+    }
+    const data = await response.json();
+    return {
+        id: data.id,
+        text: todoObjectFromSaga.text,
+        completed: data.completed,
+    };
 };
+
 
 export const deleteTodoApi = async (id) => {
     await delay(300);
-    todos = todos.filter(todo => todo.id !== id);
-    saveTodosToStorage(todos);
-    return id;
+    const response = await fetch(`https://dummyjson.com/todos/${id}`, {
+        method: 'DELETE',
+    });
+    if (!response.ok) {
+        const errorText = await response.text();
+        throw new Error(`Не вдалося видалити завдання: ${response.status} ${response.statusText} - ${errorText}`);
+    }
+    const data = await response.json();
+    return data.id;
 };
+
 
 export const updateTodoApi = async (todo) => {
     await delay(300);
-    todos = todos.map(item => (item.id === todo.id ? { ...item, ...todo } : item));
-    saveTodosToStorage(todos);
-    return todo;
+    const response = await fetch(`https://dummyjson.com/todos/${todo.id}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            todo: todo.text,
+            completed: todo.completed,
+        }),
+    });
+    if (!response.ok) {
+        const errorText = await response.text();
+        throw new Error(`Не вдалося оновити завдання: ${response.status} ${response.statusText} - ${errorText}`);
+    }
+    const data = await response.json();
+    return {
+        id: data.id,
+        text: data.todo,
+        completed: data.completed,
+    };
 };
 
 export const clearCompletedTodosApi = async () => {
-    await delay(300);
-    const initialLength = todos.length;
-    todos = todos.filter(todo => !todo.completed);
-    saveTodosToStorage(todos);
-    return initialLength - todos.length;
+    await delay(500);
+    const todosFromApi = await fetchTodos();
+    const completedIds = todosFromApi.filter(todo => todo.completed).map(todo => todo.id);
+    return completedIds;
 };

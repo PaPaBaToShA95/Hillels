@@ -9,7 +9,11 @@ const todosSlice = createSlice({
     },
     reducers: {
         setTodos: (state, action) => {
-            state.items = action.payload;
+            state.items = action.payload.map(item => ({
+                id: item.id,
+                text: item.todo,
+                completed: item.completed,
+            }));
         },
         addTodo: (state, action) => {
             state.items.push(action.payload);

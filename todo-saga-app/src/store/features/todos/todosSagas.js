@@ -1,7 +1,8 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
-import { setTodos, addTodo, removeTodo, updateTodo, setLoading, setError, clearCompleted } from '../features/todos/todosSlice';
-import { fetchTodos, addTodoApi, deleteTodoApi, updateTodoApi, clearCompletedTodosApi } from '../api/todosApi';
+import { setTodos, addTodo, removeTodo, updateTodo, setLoading, setError, clearCompleted } from './todosSlice';
+import { fetchTodos, addTodoApi, deleteTodoApi, updateTodoApi, clearCompletedTodosApi } from '../../../api/todosApi';
 import { nanoid } from 'nanoid';
+import { loadTodos, addTodoAsync, deleteTodoAsync, updateTodoAsync, clearCompletedAsync } from './todosActions';
 
 function* loadTodosSaga() {
     yield put(setLoading(true));
@@ -10,6 +11,7 @@ function* loadTodosSaga() {
         const todos = yield call(fetchTodos);
         yield put(setTodos([...todos]));
     } catch (e) {
+        console.error("loadTodosSaga: Error fetching todos:", e);
         yield put(setError(e.message));
     } finally {
         yield put(setLoading(false));
@@ -25,9 +27,11 @@ function* addTodoSaga(action) {
             text: action.payload,
             completed: false,
         };
-        const addedTodo = yield call(addTodoApi, newTodo);
+
+        const addedTodo = yield call(addTodoApi, newTodo); 
         yield put(addTodo(addedTodo));
     } catch (e) {
+        console.error("addTodoSaga: Error adding todo:", e);
         yield put(setError(e.message));
     } finally {
         yield put(setLoading(false));
@@ -65,8 +69,10 @@ function* clearCompletedSaga() {
     yield put(setLoading(true));
     yield put(setError(null));
     try {
-        yield call(clearCompletedTodosApi);
-        yield put(clearCompleted());
+        const completedIds = yield call(clearCompletedTodosApi);
+        for (const id of completedIds) {
+            yield put(deleteTodoAsync(id));
+        }
     } catch (e) {
         yield put(setError(e.message));
     } finally {
@@ -75,27 +81,21 @@ function* clearCompletedSaga() {
 }
 
 export function* watchLoadTodos() {
-    yield takeEvery('todos/loadTodos', loadTodosSaga);
+    yield takeEvery(loadTodos().type, loadTodosSaga);
 }
 
 export function* watchAddTodo() {
-    yield takeEvery('todos/addTodoAsync', addTodoSaga);
+    yield takeEvery(addTodoAsync('').type, addTodoSaga);
 }
 
 export function* watchDeleteTodo() {
-    yield takeEvery('todos/deleteTodoAsync', deleteTodoSaga);
+    yield takeEvery(deleteTodoAsync('').type, deleteTodoSaga);
 }
 
 export function* watchUpdateTodo() {
-    yield takeEvery('todos/updateTodoAsync', updateTodoSaga);
+    yield takeEvery(updateTodoAsync({}).type, updateTodoSaga);
 }
 
 export function* watchClearCompleted() {
-    yield takeEvery('todos/clearCompletedAsync', clearCompletedSaga);
+    yield takeEvery(clearCompletedAsync().type, clearCompletedSaga);
 }
-
-export const loadTodos = () => ({ type: 'todos/loadTodos' });
-export const addTodoAsync = (text) => ({ type: 'todos/addTodoAsync', payload: text });
-export const deleteTodoAsync = (id) => ({ type: 'todos/deleteTodoAsync', payload: id });
-export const updateTodoAsync = (todo) => ({ type: 'todos/updateTodoAsync', payload: todo });
-export const clearCompletedAsync = () => ({ type: 'todos/clearCompletedAsync' });
