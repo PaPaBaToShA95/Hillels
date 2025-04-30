@@ -6,6 +6,7 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import NotFound from "./pages/NotFound";
+import ThemeToggle from "./components/ThemeToggle";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route path="*" element={<NotFound />} />
           </Routes>
         </ErrorBoundary>
+        <ThemeToggle />
       </main>
       <Footer />
     </div>

@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import ThemeToggle from "./ThemeToggle";
+// import ThemeToggle from "./ThemeToggle";
 
 export default function Header() {
   return (
@@ -9,8 +9,7 @@ export default function Header() {
         <NavLink to="/about">Про мене</NavLink>
         <NavLink to="/contacts">Контакти</NavLink>
       </nav>
-
-      <ThemeToggle />
+      {/* <ThemeToggle /> */}
     </header>
   );
 }
