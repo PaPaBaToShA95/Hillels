@@ -88,6 +88,7 @@ const TodoPage: React.FC = () => {
                     <form onSubmit={handleAddTodo} className="flex gap-2 mb-6">
                         <Input
                             type="text"
+                            data-testid="add-todo"
                             placeholder="Додати нову справу..."
                             value={newTodoText}
                             onChange={(e) => setNewTodoText(e.target.value)}

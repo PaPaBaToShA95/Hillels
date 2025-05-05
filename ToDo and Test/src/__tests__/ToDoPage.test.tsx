@@ -47,7 +47,7 @@ describe('TodoPage', () => {
 
     test('after click add button add todo', () => {
         render(<TodoPage />);
-        const input = screen.getByPlaceholderText('Додати нову справу...');
+        const input = screen.getByTestId('add-todo');
         const addButton = screen.getByText('Додати');
 
         const todoText = 'Нова тестова справа';
