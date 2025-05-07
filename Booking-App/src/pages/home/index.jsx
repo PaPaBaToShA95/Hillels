@@ -2,10 +2,6 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useNavigate } from 'react-router-dom';
 import { Form, Field } from 'react-final-form';
-import { useDispatch } from 'react-redux';
-import { fetchHotelsRequest } from '@/store/features/hotels/hotelsSlice';
-
-
 
 
 const HomePage = () => {
@@ -20,8 +16,6 @@ const HomePage = () => {
 
     navigate(`/hotels?${params.toString()}`);
   };
-  const dispatch = useDispatch();
-  dispatch(fetchHotelsRequest(params.toString()));
 
   return (
     <section className="min-h-[77vh]">
