@@ -1,56 +1,72 @@
 const AboutPage = () => {
   return (
     <section>
-      <h2 className="text-3xl font-bold text-yellow-400 mb-6">About the Project</h2>
+      <h2 className="text-3xl font-bold text-yellow-400 mb-6">Про проєкт</h2>
 
       <p className="text-white text-lg mb-6 leading-relaxed">
-        <strong>BookingApp</strong> is a modern and minimalistic hotel browsing experience built for
-        educational purposes. Imagine you're planning a spontaneous trip — this app lets you explore
-        available hotels with ease, get quick details, and prepare to book… all with a smooth and
-        stylish interface.
+        <strong>HillelsBooking</strong> — це сучасний, мінімалістичний додаток для перегляду
+        готелів, створений мною, <strong>Олексієм Ермантраутом</strong>, у межах дипломного проєкту
+        на курсі Frontend-розробки. Його мета — забезпечити швидкий, інтуїтивно зрозумілий інтерфейс
+        для пошуку та перегляду готелів.
       </p>
 
       <p className="text-white text-lg mb-6 leading-relaxed">
-        This project was created as part of a front-end development learning module, but it's
-        intentionally designed to simulate real-world architecture, best practices, and clean code
-        principles. From modular structure to reusable components — the goal is not just to make it
-        work, but to make it scalable, readable, and easy to build upon.
+        Хоча цей проєкт навчальний, я прагнув створити його максимально наближеним до умов реального
+        комерційного застосування — з правильною архітектурою, модульністю, повторним використанням
+        компонентів і дотриманням принципів чистого коду.
       </p>
 
-      <h3 className="text-xl font-semibold text-yellow-300 mb-3">🔧 Tech Stack:</h3>
+      <h3 className="text-xl font-semibold text-yellow-300 mb-3">🔧 Технології:</h3>
       <ul className="list-disc list-inside text-white text-base mb-6 space-y-1">
         <li>
-          ⚡ <strong>React + Vite</strong> — fast, modern tooling
+          ⚛️ <strong>Create React App</strong> — офіційний стартовий шаблон для проєктів на React
         </li>
         <li>
-          🌐 <strong>React Router</strong> with <code>createBrowserRouter</code>
+          🌐 <strong>React Router</strong> — маршрутизація сторінок через{' '}
+          <code>createBrowserRouter</code>
         </li>
         <li>
-          🎨 <strong>TailwindCSS</strong> — fully dark-themed UI
+          ✍️ <strong>React Final Form</strong> — керування формами з валідацією та зручним API
         </li>
         <li>
-          📡 <strong>Axios + json-server</strong> — fake REST API
+          📡 <strong>Axios</strong> — запити до API (у нашому випадку — до{' '}
+          <strong>json-server</strong>)
         </li>
         <li>
-          📝 <strong>react-hook-form</strong> — elegant form handling
+          📦 <strong>Redux</strong> — централізоване сховище стану додатку
         </li>
         <li>
-          🧼 <strong>ESLint + Prettier</strong> — keeping code clean & consistent
+          🧭 <strong>Redux-First History</strong> — інтеграція історії навігації з Redux
+        </li>
+        <li>
+          🔁 <strong>Redux-Saga</strong> — керування побічними ефектами (запити, таймери, обробка
+          подій)
+        </li>
+        <li>
+          🔐 <strong>.env</strong> — зберігання конфіденційних даних і змінних середовища
+        </li>
+        <li>
+          🧼 <strong>ESLint</strong> — лінтинг JavaScript-коду згідно з обраними правилами
+        </li>
+        <li>
+          🗄️ <strong>json-server</strong> — фейковий backend для тестування API
         </li>
       </ul>
 
-      <h3 className="text-xl font-semibold text-yellow-300 mb-3">🎯 Why this project matters:</h3>
+      <h3 className="text-xl font-semibold text-yellow-300 mb-3">🎯 Чому цей проєкт важливий:</h3>
       <p className="text-white text-lg mb-6 leading-relaxed">
-        Too often tutorials skip the boring (yet important) parts — like code organization, file
-        structure, or consistent styling rules. This project is different: we aim to teach how to
-        build something functional **and** professional. That means readable components, split
-        logic, environment variables, and a reusable folder system.
+        У багатьох туторіалах часто упускають важливі речі: структурування файлів, організацію
+        логіки, підключення стилізаційних інструментів чи оптимізацію. У цьому проєкті я врахував
+        усе — від масштабованості до гнучкості. Тут немає випадкових рішень — кожен компонент має
+        своє чітке місце та призначення.
       </p>
 
-      <h3 className="text-xl font-semibold text-yellow-300 mb-3">👨‍💻 Author:</h3>
+      <h3 className="text-xl font-semibold text-yellow-300 mb-3">👨‍💻 Автор проєкту:</h3>
       <p className="text-white text-lg leading-relaxed">
-        Built with love and a passion for teaching clean code. If you're reading this, you're
-        already leveling up — keep going! 🚀
+        Мене звати <strong>Олексій Ермантраут</strong>. Я Frontend-розробник, який захоплюється
+        чистим кодом, продуманими інтерфейсами та системним підходом до проєктування. Цей проєкт —
+        підсумок мого навчання та водночас місток у професійний світ. Якщо ви читаєте це — значить
+        ми вже на шляху до зростання. 🚀
       </p>
     </section>
   );

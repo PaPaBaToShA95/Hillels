@@ -1,38 +1,31 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import api from '@/services/axiosService';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchHotelDetails, bookHotel } from '../../redux/slicer/hotelSlicer';
 import clsx from 'clsx';
 
 const HotelDetailsPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const [hotel, setHotel] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const dispatch = useDispatch();
+
   const [bookingInProgress, setBookingInProgress] = useState(false);
 
-  const fetchHotel = useCallback(async () => {
-    try {
-      const response = await api.get(`/hotels/${id}`);
-      setHotel(response.data);
-    } catch (error) {
-      console.error('Error while fetching hotel:', error);
-    } finally {
-      setLoading(false);
-    }
-  }, [id]);
+  const hotel = useSelector(state => state.hotels.currentHotel);
+  const loading = useSelector(state => state.hotels.loading);
 
   useEffect(() => {
-    fetchHotel();
-  }, [fetchHotel, id]);
+    dispatch(fetchHotelDetails(id));
+    return () => {
+      dispatch({ type: 'hotels/clearCurrentHotel' });
+    };
+  }, [dispatch, id]);
 
   const handleBooking = async () => {
     if (!hotel || hotel.booked) return;
-
-    setBookingInProgress(true);
-
     try {
-      await api.patch(`/hotels/${id}`, { booked: true });
-      await fetchHotel();
+      setBookingInProgress(true);
+      await dispatch(bookHotel(hotel.id)).unwrap();
     } catch (error) {
       console.error('Error while booking:', error);
     } finally {
@@ -40,11 +33,11 @@ const HotelDetailsPage = () => {
     }
   };
 
-  if (loading) {
+  if (loading === 'loading') {
     return <p className="text-center text-yellow-400">Завантаження...</p>;
   }
 
-  if (!hotel) {
+  if (!hotel || String(hotel.id) !== id) {
     return <p className="text-center text-red-400">Готель за цим запитом не знайдено</p>;
   }
 
@@ -52,6 +45,7 @@ const HotelDetailsPage = () => {
     <section className="flex flex-col gap-6">
       <button
         onClick={() => navigate('/hotels')}
+        aria-label="Повернутись до списку готелів"
         className="text-yellow-400 hover:underline self-start"
       >
         ← Повернутись до списку готелів
@@ -62,7 +56,7 @@ const HotelDetailsPage = () => {
       <div>
         <h2 className="text-3xl font-bold text-yellow-400 mb-2">{hotel.title}</h2>
         <p className="text-gray-400 mb-2">{hotel.location}</p>
-        <p className="text-yellow-300 font-semibold text-xl mb-4">${hotel.price} / ніч</p>
+        <p className="text-yellow-300 font-semibold text-xl mb-4">₴{hotel.price} / ніч</p>
         <p className="text-white text-lg leading-relaxed">{hotel.description}</p>
       </div>
 
