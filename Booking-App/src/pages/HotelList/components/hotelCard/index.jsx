@@ -14,10 +14,10 @@ const HotelCard = ({ id, image, title, location, price, description, className }
     <div className="p-4">
       <h3 className="text-xl font-semibold mb-1">{title}</h3>
       <p className="text-sm text-gray-400 mb-2">{location}</p>
-      <p className="text-yellow-400 font-bold mb-2">₴{price} / ніч</p>
+      <p className="text-yellow-400 font-bold mb-2">${price} / night</p>
       <p className="text-sm mb-4">{description}</p>
 
-      <div className="text-yellow-300 hover:underline font-medium">Деталі ⇒</div>
+      <div className="text-yellow-300 hover:underline font-medium">Details →</div>
     </div>
   </Link>
 );

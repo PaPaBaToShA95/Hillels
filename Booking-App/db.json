@@ -7,7 +7,7 @@
       "price": 1500,
       "image": "https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "description": "Сучасний готель в центрі столиці.",
-      "booked": false
+      "booked": true
     },
     {
       "id": "2",
@@ -16,7 +16,7 @@
       "price": 1200,
       "image": "https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "description": "Затишне місце у старовинному місті.",
-      "booked": false
+      "booked": true
     },
     {
       "id": "3",
