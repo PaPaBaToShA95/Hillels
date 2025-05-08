@@ -1,0 +1,504 @@
+{
+  "hotels": [
+    {
+      "id": "1",
+      "title": "Готель Київський",
+      "location": "Київ",
+      "price": 1500,
+      "image": "https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Сучасний готель в центрі столиці, розташований недалеко від основних визначних пам'яток. Пропонує комфортні номери та високий рівень обслуговування.",
+      "booked": false,
+      "stars": 4.5
+    },
+    {
+      "id": "2",
+      "title": "Львівська Садиба",
+      "location": "Львів",
+      "price": 1200,
+      "image": "https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Затишне місце у старовинному місті Лева. Готель розташований в історичному районі, ідеально підходить для піших прогулянок та знайомства з культурою міста.",
+      "booked": false,
+      "stars": 3.5
+    },
+    {
+      "id": "3",
+      "title": "Одеський Бриз",
+      "location": "Одеса",
+      "price": 1800,
+      "image": "https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Готель біля моря з чудовим краєвидом на узбережжя. Пропонує комфортабельні номери та доступ до приватного пляжу. Відмінний вибір для літнього відпочинку.",
+      "booked": false,
+      "stars": 4.0
+    },
+    {
+      "id": "4",
+      "title": "Харківський Палац",
+      "location": "Харків",
+      "price": 1400,
+      "image": "https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Елегантний готель для комфортного відпочинку та ділових поїздок. Розташований у центрі міста, має розвинену інфраструктуру та конференц-зали.",
+      "booked": false,
+      "stars": 4.5
+    },
+    {
+      "id": "5",
+      "title": "Дніпровська Перлина",
+      "location": "Дніпро",
+      "price": 1300,
+      "image": "https://images.pexels.com/photos/271639/pexels-photo-271639.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Готель на березі Дніпра з панорамними вікнами та чудовим видом на річку. Ідеально підходить для романтичного відпочинку або ділової поїздки.",
+      "booked": false,
+      "stars": 3.0
+    },
+    {
+      "id": "6",
+      "title": "Запорізька Січ",
+      "location": "Запоріжжя",
+      "price": 1100,
+      "image": "https://images.pexels.com/photos/594077/pexels-photo-594077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Готель з історичним колоритом, розташований недалеко від острова Хортиця. Пропонує зануритися в історію Запоріжжя та відчути дух козацтва.",
+      "booked": false,
+      "stars": 2.5
+    },
+    {
+      "id": "7",
+      "title": "Полтавська Гавань",
+      "location": "Полтава",
+      "price": 1000,
+      "image": "https://images.pexels.com/photos/1005058/pexels-photo-1005058.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Тихий готель для спокійного відпочинку в Полтаві. Розташований у зеленому районі, ідеально підходить для релаксації після насиченого дня.",
+      "booked": false,
+      "stars": 3.0
+    },
+    {
+      "id": "8",
+      "title": "Чернігівська Фортеця",
+      "location": "Чернігів",
+      "price": 950,
+      "image": "https://images.pexels.com/photos/1458457/pexels-photo-1458457.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Готель недалеко від історичних пам'яток Чернігова. Зручне розташування дозволяє легко дістатися до головних музеїв та архітектурних шедеврів.",
+      "booked": false,
+      "stars": 4.0
+    },
+    {
+      "id": "9",
+      "title": "Черкаська Хвиля",
+      "location": "Черкаси",
+      "price": 900,
+      "image": "https://images.pexels.com/photos/261102/pexels-photo-261102.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Готель з видом на Кременчуцьке водосховище. Пропонує чудові краєвиди та можливості для водних розваг. Комфортне проживання біля великої води.",
+      "booked": false,
+      "stars": 3.5
+    },
+    {
+      "id": "10",
+      "title": "Вінницький Замок",
+      "location": "Вінниця",
+      "price": 1050,
+      "image": "https://images.pexels.com/photos/271619/pexels-photo-271619.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Готель у діловому районі міста Вінниця. Ідеально підходить для бізнес-мандрівників. Має зручне транспортне сполучення та всі необхідні послуги.",
+      "booked": false,
+      "stars": 4.0
+    },
+    {
+      "id": "11",
+      "title": "Житомирська Брама",
+      "location": "Житомир",
+      "price": 850,
+      "image": "https://images.pexels.com/photos/3225531/pexels-photo-3225531.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Зручний готель для подорожуючих та тих, хто зупиняється транзитом. Розташований на в'їзді до міста, пропонує швидке заселення та комфортний відпочинок.",
+      "booked": false,
+      "stars": 3.0
+    },
+    {
+      "id": "12",
+      "title": "Кропивницький Сад",
+      "location": "Кропивницький",
+      "price": 800,
+      "image": "https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Зелений готель у тихому районі Кропивницького. Оточений зеленню та парками, ідеально підходить для спокійного відпочинку подалі від міської метушні.",
+      "booked": false,
+      "stars": 3.5
+    },
+    {
+      "id": "13",
+      "title": "Хмельницький Степ",
+      "location": "Хмельницький",
+      "price": 980,
+      "image": "https://images.pexels.com/photos/2467285/pexels-photo-2467285.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Готель на в'їзді до міста Хмельницький. Зручне розташування для тих, хто подорожує автомобілем. Пропонує просторі номери та парковку.",
+      "booked": false,
+      "stars": 4.0
+    },
+    {
+      "id": "14",
+      "title": "Чернівецька Резиденція",
+      "location": "Чернівці",
+      "price": 1150,
+      "image": "https://images.pexels.com/photos/1579253/pexels-photo-1579253.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Елегантний готель біля Чернівецького національного університету. Відчуйте атмосферу старовинної Буковини. Ідеально для тих, хто відвідує місто з культурною метою.",
+      "booked": false,
+      "stars": 5.0
+    },
+    {
+      "id": "15",
+      "title": "Тернопільська Оселя",
+      "location": "Тернопіль",
+      "price": 920,
+      "image": "https://images.pexels.com/photos/237371/pexels-photo-237371.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Готель біля мальовничого Тернопільського ставу. Пропонує прекрасні краєвиди та близькість до зони відпочинку. Ідеально для прогулянок та релаксу.",
+      "booked": false,
+      "stars": 3.0
+    },
+    {
+      "id": "16",
+      "title": "Івано-Франківський Карпатський",
+      "location": "Івано-Франківськ",
+      "price": 1250,
+      "image": "https://images.pexels.com/photos/189296/pexels-photo-189296.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Готель для любителів гір та природи. Розташований недалеко від Карпат, пропонує зручний старт для походів та екскурсій у гори.",
+      "booked": false,
+      "stars": 4.5
+    },
+    {
+      "id": "17",
+      "title": "Луцький Замок Любарта",
+      "location": "Луцьк",
+      "price": 880,
+      "image": "https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Готель в історичній частині міста Луцьк, недалеко від Замку Любарта. Зануртеся в атмосферу середньовіччя та дослідіть старовинні вулички.",
+      "booked": false,
+      "stars": 3.0
+    },
+    {
+      "id": "18",
+      "title": "Рівненський Бурштин",
+      "location": "Рівне",
+      "price": 820,
+      "image": "https://images.pexels.com/photos/1005058/pexels-photo-1005058.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Готель з бізнес-центром у місті Рівне. Ідеальний вибір для ділових подорожей. Пропонує обладнані конференц-зали та швидкий інтернет.",
+      "booked": false,
+      "stars": 3.5
+    },
+    {
+      "id": "19",
+      "title": "Херсонський Порт",
+      "location": "Херсон",
+      "price": 750,
+      "image": "https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Готель недалеко від річкового порту Херсона. Зручно для тих, хто подорожує водним транспортом або цікавиться портовим життям міста.",
+      "booked": false,
+      "stars": 2.5
+    },
+    {
+      "id": "20",
+      "title": "Миколаївська Верф",
+      "location": "Миколаїв",
+      "price": 780,
+      "image": "https://images.pexels.com/photos/1005058/pexels-photo-1005058.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Готель для тих, хто цікавиться історією суднобудування у Миколаєві. Розташований недалеко від підприємств галузі та музеїв.",
+      "booked": false,
+      "stars": 3.0
+    },
+    {
+      "id": "21",
+      "title": "Суми Садова",
+      "location": "Суми",
+      "price": 700,
+      "image": "https://images.pexels.com/photos/261101/pexels-photo-261101.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Готель у тихому зеленому районі міста Суми. Ідеальне місце для відпочинку від міського шуму. Поруч є парки та зони відпочинку.",
+      "booked": false,
+      "stars": 2.5
+    },
+    {
+      "id": "22",
+      "title": "Полтавська Битва",
+      "location": "Полтава",
+      "price": 990,
+      "image": "https://images.pexels.com/photos/360912/pexels-photo-360912.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Готель біля музею Полтавської битви. Зануртеся в історію великої битви. Зручно для тих, хто приїхав вивчити історичні місця.",
+      "booked": false,
+      "stars": 4.0
+    },
+    {
+      "id": "23",
+      "title": "Житомирський Ліс",
+      "location": "Житомир",
+      "price": 870,
+      "image": "https://images.pexels.com/photos/237371/pexels-photo-237371.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Готель біля лісопарку у Житомирі. Чудове місце для любителів природи та прогулянок на свіжому повітрі. Пропонує тихий та спокійний відпочинок.",
+      "booked": false,
+      "stars": 3.5
+    },
+    {
+      "id": "24",
+      "title": "Кропивницький Театр",
+      "location": "Кропивницький",
+      "price": 810,
+      "image": "https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Готель поруч з театром у Кропивницькому. Ідеально для тих, хто приїхав на виставу або культурні заходи. Зручне розташування в центрі міста.",
+      "booked": false,
+      "stars": 3.0
+    },
+    {
+      "id": "25",
+      "title": "Хмельницький Водоспад",
+      "location": "Хмельницький",
+      "price": 960,
+      "image": "https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Готель недалеко від мальовничих місць та водоспадів на Хмельниччині. Чудовий вибір для екотуризму та відпочинку на природі.",
+      "booked": false,
+      "stars": 4.5
+    },
+    {
+      "id": "26",
+      "title": "Чернівецький Двір",
+      "location": "Чернівці",
+      "price": 1120,
+      "image": "https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Готель у старому місті Чернівці. Пропонує зануритися в унікальну архітектуру та атмосферу міста. Все в пішій доступності.",
+      "booked": false,
+      "stars": 4.0
+    },
+    {
+      "id": "27",
+      "title": "Тернопільський Став",
+      "location": "Тернопіль",
+      "price": 930,
+      "image": "https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Готель з видом на Тернопільський став. Прокидайтеся з чудовим краєвидом на воду. Ідеально для ранкових пробіжок та вечірніх прогулянок біля озера.",
+      "booked": false,
+      "stars": 3.5
+    },
+    {
+      "id": "28",
+      "title": "Івано-Франківський Ратуша",
+      "location": "Івано-Франківськ",
+      "price": 1280,
+      "image": "https://images.pexels.com/photos/271639/pexels-photo-271639.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Готель у самому центрі міста Івано-Франківськ, біля ратуші. Ви будете в епіцентрі подій, поруч з ресторанами, магазинами та культурними закладами.",
+      "booked": false,
+      "stars": 5.0
+    },
+    {
+      "id": "29",
+      "title": "Луцький Ринок",
+      "location": "Луцьк",
+      "price": 890,
+      "image": "https://images.pexels.com/photos/594077/pexels-photo-594077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Готель біля центрального ринку Луцька. Зручне розташування для тих, хто приїхав з торговельною метою або хоче відчути місцевий колорит.",
+      "booked": false,
+      "stars": 3.0
+    },
+    {
+      "id": "30",
+      "title": "Рівненський Парк",
+      "location": "Рівне",
+      "price": 830,
+      "image": "https://images.pexels.com/photos/1005058/pexels-photo-1005058.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Готель поруч з міським парком у Рівному. Чудове місце для відпочинку на природі, прогулянок та занять спортом. Тиша та свіже повітря.",
+      "booked": false,
+      "stars": 3.5
+    },
+    {
+      "id": "31",
+      "title": "Херсонський Дніпро",
+      "location": "Херсон",
+      "price": 760,
+      "image": "https://images.pexels.com/photos/1458457/pexels-photo-1458457.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Готель з видом на Дніпро у Херсоні. Насолоджуйтесь річковими пейзажами прямо з вікна номеру. Ідеально для любителів річкових круїзів.",
+      "booked": false,
+      "stars": 2.5
+    },
+    {
+      "id": "32",
+      "title": "Миколаївський Буг",
+      "location": "Миколаїв",
+      "price": 790,
+      "image": "https://images.pexels.com/photos/261102/pexels-photo-261102.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Готель на березі річки Південний Буг у Миколаєві. Пропонує відпочинок біля річки та можливості для риболовлі або катання на човнах.",
+      "booked": false,
+      "stars": 3.0
+    },
+    {
+      "id": "33",
+      "title": "Суми Річка",
+      "location": "Суми",
+      "price": 710,
+      "image": "https://images.pexels.com/photos/271619/pexels-photo-271619.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Готель недалеко від річки Псел у Сумах. Чудовий вибір для тих, хто шукає відпочинок біля води та любить природу.",
+      "booked": false,
+      "stars": 2.5
+    },
+    {
+      "id": "34",
+      "title": "Полтавський Хрест",
+      "location": "Полтава",
+      "price": 970,
+      "image": "https://images.pexels.com/photos/3225531/pexels-photo-3225531.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Готель біля Білої альтанки та інших визначних місць Полтави. Зручна відправна точка для екскурсій по місту.",
+      "booked": false,
+      "stars": 4.0
+    },
+    {
+      "id": "35",
+      "title": "Житомирський Польовий",
+      "location": "Житомир",
+      "price": 860,
+      "image": "https://images.pexels.com/photos/261102/pexels-photo-261102.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Готель на околиці міста Житомир. Підходить для тих, хто подорожує автомобілем або віддає перевагу тихому відпочинку подалі від центру.",
+      "booked": false,
+      "stars": 3.0
+    },
+    {
+      "id": "36",
+      "title": "Кропивницький Парк Ковалівський",
+      "location": "Кропивницький",
+      "price": 840,
+      "image": "https://images.pexels.com/photos/2467285/pexels-photo-2467285.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Готель біля парку Ковалівського у Кропивницькому. Чудове місце для вечірніх прогулянок та відпочинку серед зелені.",
+      "booked": false,
+      "stars": 3.5
+    },
+    {
+      "id": "37",
+      "title": "Хмельницький Острів Кохання",
+      "location": "Хмельницький",
+      "price": 940,
+      "image": "https://images.pexels.com/photos/1579253/pexels-photo-1579253.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Готель недалеко від Острова Кохання на Хмельниччині. Романтичне місце для пар та любителів красивих краєвидів.",
+      "booked": false,
+      "stars": 4.0
+    },
+    {
+      "id": "38",
+      "title": "Чернівецький Університет",
+      "location": "Чернівці",
+      "price": 1180,
+      "image": "https://images.pexels.com/photos/237371/pexels-photo-237371.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Готель поруч з Чернівецьким національним університетом, архітектурною перлиною міста. Ідеально для гостей університету та поціновувачів архітектури.",
+      "booked": false,
+      "stars": 4.5
+    },
+    {
+      "id": "39",
+      "title": "Тернопільський Замок",
+      "location": "Тернопіль",
+      "price": 910,
+      "image": "https://images.pexels.com/photos/189296/pexels-photo-189296.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Готель біля Тернопільського замку. Зануртеся в історію міста. Зручне розташування для дослідження історичного центру.",
+      "booked": false,
+      "stars": 3.0
+    },
+    {
+      "id": "40",
+      "title": "Івано-Франківський Бастіон",
+      "location": "Івано-Франківськ",
+      "price": 1220,
+      "image": "https://images.pexels.com/photos/261102/pexels-photo-261102.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Готель біля фортечного бастіону в Івано-Франківську. Відчуйте атмосферу старовинної фортеці. Поруч знаходиться зона відпочинку та музеї.",
+      "booked": false,
+      "stars": 4.0
+    },
+    {
+      "id": "41",
+      "title": "Луцький Собор",
+      "location": "Луцьк",
+      "price": 875,
+      "image": "https://images.pexels.com/photos/1005058/pexels-photo-1005058.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Готель недалеко від Петропавлівського костелу та інших релігійних споруд Луцька. Ідеально для паломників та поціновувачів сакральної архітектури.",
+      "booked": false,
+      "stars": 3.0
+    },
+    {
+      "id": "42",
+      "title": "Рівненський Зоопарк",
+      "location": "Рівне",
+      "price": 815,
+      "image": "https://images.pexels.com/photos/2467285/pexels-photo-2467285.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Готель біля Рівненського зоопарку. Чудовий вибір для відпочинку з дітьми. Легкий доступ до однієї з головних розваг міста.",
+      "booked": false,
+      "stars": 3.5
+    },
+    {
+      "id": "43",
+      "title": "Херсонський Маяк",
+      "location": "Херсон",
+      "price": 740,
+      "image": "https://images.pexels.com/photos/1005058/pexels-photo-1005058.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Готель недалеко від річкового маяка у Херсоні. Пропонує вид на річку та спокійний відпочинок біля води.",
+      "booked": false,
+      "stars": 2.5
+    },
+    {
+      "id": "44",
+      "title": "Миколаївська Набережна",
+      "location": "Миколаїв",
+      "price": 770,
+      "image": "https://images.pexels.com/photos/261101/pexels-photo-261101.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Готель на набережній міста Миколаїв. Ідеальне місце для вечірніх прогулянок та насолоди річковими краєвидами.",
+      "booked": false,
+      "stars": 3.0
+    },
+    {
+      "id": "45",
+      "title": "Суми Альтанка",
+      "location": "Суми",
+      "price": 720,
+      "image": "https://images.pexels.com/photos/360912/pexels-photo-360912.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Готель біля Альтанки, символу міста Суми. Зручне розташування в історичному центрі, поруч з магазинами та ресторанами.",
+      "booked": false,
+      "stars": 2.5
+    },
+    {
+      "id": "46",
+      "title": "Полтавський Музей",
+      "location": "Полтава",
+      "price": 965,
+      "image": "https://images.pexels.com/photos/237371/pexels-photo-237371.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Готель недалеко від Полтавського краєзнавчого музею. Ідеально для тих, хто хоче дослідити історію та культуру Полтавщини.",
+      "booked": false,
+      "stars": 4.0
+    },
+    {
+      "id": "47",
+      "title": "Житомирський Водоканал",
+      "location": "Житомир",
+      "price": 855,
+      "image": "https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Готель біля водонапірної вежі у Житомирі. Незвичайне розташування поруч з архітектурною пам'яткою. Зручне транспортне сполучення.",
+      "booked": false,
+      "stars": 3.0
+    },
+    {
+      "id": "48",
+      "title": "Кропивницький Парк Перемоги",
+      "location": "Кропивницький",
+      "price": 835,
+      "image": "https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Готель біля парку Перемоги у Кропивницькому. Чудове місце для відпочинку з сім'єю. Пропонує тишу та зелень для релаксу.",
+      "booked": false,
+      "stars": 3.5
+    },
+    {
+      "id": "49",
+      "title": "Хмельницький Філармонія",
+      "location": "Хмельницький",
+      "price": 955,
+      "image": "https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Готель поруч з Хмельницькою обласною філармонією. Ідеально для поціновувачів музики та мистецтва. Зручне розташування в культурному центрі.",
+      "booked": false,
+      "stars": 4.0
+    },
+    {
+      "id": "50",
+      "title": "Чернівецький Театр Кобилянської",
+      "location": "Чернівці",
+      "price": 1170,
+      "image": "https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "description": "Готель біля Чернівецького обласного драматичного театру імені Ольги Кобилянської. Зручно для відвідування театральних вистав.",
+      "booked": false,
+      "stars": 4.5
+    }
+  ]
+}
