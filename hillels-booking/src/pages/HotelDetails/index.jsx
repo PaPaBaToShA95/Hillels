@@ -1,10 +1,25 @@
 import { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { bookHotelRequest, fetchHotelsRequest } from '../../store/actions/hotelActions';
+import { bookHotelRequest, fetchHotelsRequest } from '@/store/actions/hotelActions';
 import { toast } from 'react-hot-toast';
+
 import Button from '@mui/material/Button';
 import Rating from '@mui/material/Rating';
+import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
+import Typography from '@mui/material/Typography';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Stack from '@mui/material/Stack';
+import Grid from '@mui/material/Grid';
+
+const darkGrey800 = '#2D3748';
+const blue600 = '#2563EB';
+const blue400 = '#60A5FA';
+const lightGrey200 = '#E5E7EB';
+const darkGrey700 = '#374151';
 
 function HotelDetailsPage() {
   const { id } = useParams();
@@ -15,11 +30,30 @@ function HotelDetailsPage() {
     dispatch(fetchHotelsRequest());
   }, [dispatch]);
 
-  if (loading) return <div className="text-center py-12">Завантаження...</div>;
-  if (error) return <div className="text-center py-12 text-red-500">Помилка: {error}</div>;
+  if (loading) {
+    return (
+      <Box sx={{ textAlign: 'center', py: 6 }}>
+        <Typography variant="h6">Завантаження...</Typography>
+      </Box>
+    );
+  }
+
+  if (error) {
+    return (
+      <Box sx={{ textAlign: 'center', py: 6, color: 'error.main' }}>
+        <Typography variant="h6">Помилка: {error}</Typography>
+      </Box>
+    );
+  }
 
   const hotel = hotels.find(h => h.id === id);
-  if (!hotel) return <div className="text-center py-12">Готель не знайдено</div>;
+  if (!hotel) {
+    return (
+      <Box sx={{ textAlign: 'center', py: 6 }}>
+        <Typography variant="h6">Готель не знайдено</Typography>
+      </Box>
+    );
+  }
 
   const handleBook = () => {
     dispatch(bookHotelRequest(id));
@@ -27,35 +61,81 @@ function HotelDetailsPage() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto">
-      <div className="bg-white rounded-3xl shadow-md overflow-hidden">
-        <img src={hotel.image} alt={hotel.title} className="w-full h-96 object-cover" />
-        <div className="p-6 bg-gray-800">
-          <h1 className="text-3xl text-blue-600 font-bold mb-2">{hotel.title}</h1>
-          <p className="text-blue-400 mb-4">{hotel.location}</p>
-          <p className="text-blue-400 text-2xl font-bold mb-6">₴{hotel.price}/нічь</p>
-          <div className="flex items-center mb-4">
-            <p className="text-blue-400 mr-2">Рейтинг:</p>
-            <Rating value={hotel.stars} precision={0.5} readOnly />
-          </div>
-          <p className="text-blue-400 text-xl mb-8">{hotel.description}</p>
+    <Container maxWidth="sm" sx={{ py: 3 }}>
+      <Card sx={{ borderRadius: 3 }}>
+        <Grid container>
+          <Grid item xs={12} md={5}>
+            <CardMedia
+              component="img"
+              image={hotel.image}
+              alt={hotel.title}
+              sx={{ objectFit: 'cover', width: '100%', height: '100%' }}
+            />
+          </Grid>
+          <Grid item xs={12} md={7}>
+            <CardContent sx={{ p: 3, backgroundColor: darkGrey800 }}>
+              <Typography
+                variant="h4"
+                component="h1"
+                sx={{ color: blue600, fontWeight: 'bold', mb: 1 }}
+              >
+                {hotel.title}
+              </Typography>
+              <Typography variant="body1" sx={{ color: blue400, mb: 2 }}>
+                м.{hotel.location}
+              </Typography>
+              <Typography variant="h5" sx={{ color: blue400, fontWeight: 'bold', mb: 3 }}>
+                ₴{hotel.price}/нічь
+              </Typography>
+              <Stack direction="row" alignItems="center" sx={{ mb: 2 }}>
+                <Typography variant="body1" sx={{ color: blue400, mr: 1 }}>
+                  Рейтинг:
+                </Typography>
+                <Rating value={hotel.stars} precision={0.5} readOnly sx={{ color: blue400 }} />
+              </Stack>
+              <Typography variant="body1" sx={{ color: blue400, mb: 4 }}>
+                {hotel.description}
+              </Typography>
 
-          {hotel.booked ? (
-            <div className="bg-gray-200 text-gray-700 px-4 py-2 rounded inline-block">
-              Вже заброньовано
-            </div>
-          ) : (
-            <Button onClick={handleBook} variant="contained">
-              Забронювати
-            </Button>
-          )}
+              {hotel.booked ? (
+                <Box
+                  sx={{
+                    backgroundColor: lightGrey200,
+                    color: darkGrey700,
+                    px: 2,
+                    py: 1,
+                    borderRadius: 0.5,
+                    display: 'inline-block',
+                  }}
+                >
+                  Вже заброньовано
+                </Box>
+              ) : (
+                <Button onClick={handleBook} variant="contained">
+                  Забронювати
+                </Button>
+              )}
 
-          <Link to="/hotels" className="ml-4 text-blue-600 hover:underline">
-            <Button variant="text">Повернутися до списку готелів</Button>
-          </Link>
-        </div>
-      </div>
-    </div>
+              <Button
+                variant="text"
+                component={Link}
+                to="/hotels"
+                sx={{
+                  ml: 2,
+                  color: blue600,
+                  textDecoration: 'none',
+                  '&:hover': {
+                    textDecoration: 'underline',
+                  },
+                }}
+              >
+                Повернутися до списку готелів
+              </Button>
+            </CardContent>
+          </Grid>
+        </Grid>
+      </Card>
+    </Container>
   );
 }
 

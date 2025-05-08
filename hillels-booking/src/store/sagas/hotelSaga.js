@@ -12,11 +12,11 @@ import {
 function* fetchHotels(action) {
   try {
     const values = action.payload && typeof action.payload === 'object' ? action.payload : {};
-    const { location, price, checkIn } = values;
+    const { location, price, stars } = values;
     const params = new URLSearchParams();
     if (location) params.append('location', location);
     if (price) params.append('price_lte', price);
-    if (checkIn) params.append('checkIn', checkIn);
+    if (stars) params.append('stars_gte', stars);
     const url = `/api/hotels${params.toString() ? `?${params.toString()}` : ''}`;
 
     const response = yield call(axios.get, url);

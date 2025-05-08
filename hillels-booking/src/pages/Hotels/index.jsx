@@ -1,8 +1,10 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchHotelsRequest } from '../../store/actions/hotelActions';
-import SearchForm from '../../components/SearchForm';
-import HotelCard from '../../components/HotelCard';
+import { fetchHotelsRequest } from '@/store/actions/hotelActions';
+import SearchForm from '@/components/SearchForm';
+import HotelCard from '@/components/HotelCard';
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
 
 function HotelsPage() {
   const dispatch = useDispatch();
@@ -14,8 +16,21 @@ function HotelsPage() {
     dispatch(fetchHotelsRequest());
   }, [dispatch]);
 
-  if (loading) return <div className="text-center py-12">Завантаження...</div>;
-  if (error) return <div className="text-center py-12 text-red-500">Помилка: {error}</div>;
+  if (loading) {
+    return (
+      <Box sx={{ textAlign: 'center', py: 6 }}>
+        <Typography variant="h6">Завантаження...</Typography>
+      </Box>
+    );
+  }
+
+  if (error) {
+    return (
+      <Box sx={{ textAlign: 'center', py: 6, color: 'error.main' }}>
+        <Typography variant="h6">Помилка: {error}</Typography>
+      </Box>
+    );
+  }
 
   return (
     <div>

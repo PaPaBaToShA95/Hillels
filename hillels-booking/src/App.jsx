@@ -1,11 +1,12 @@
 import { Toaster } from 'react-hot-toast';
 import { Routes, Route } from 'react-router-dom';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import HomePage from './pages/Home';
-import HotelsPage from './pages/Hotels';
-import HotelDetailsPage from './pages/HotelDetails';
-import AboutPage from './pages/About';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import HomePage from '@/pages/Home';
+import HotelsPage from '@/pages/Hotels';
+import HotelDetailsPage from '@/pages/HotelDetails';
+import AboutPage from '@/pages/About';
+import NotFound from '@/pages/NotFound';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/hotels" element={<HotelsPage />} />
           <Route path="/hotels/:id" element={<HotelDetailsPage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
       <Footer />
